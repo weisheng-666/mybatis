@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 配置环境 -->
+    <environments default="development">
+        <!-- 配置mysql环境 -->
+        <environment id="development">
+            <!-- 配置事务 -->
+            <transactionManager type="JDBC"/>
+            <!-- 配置数据源连接池 -->
+            <dataSource type="POOLED">
+                <!-- 这⾥⽤得是mysql8的驱动包 -->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://47.100.56.31:3306/hws"/>
+                <property name="username" value="root1"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="IUserDao.xml"/>
+    </mappers>
+</configuration>
